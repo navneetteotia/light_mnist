@@ -26,6 +26,18 @@ jobs:
       run: |
         python -m unittest test_mnist_cnn.py -k test_parameter_count
         
+    - name: Run README test
+      run: |
+        python -m unittest test_mnist_cnn.py -k test_readme_exists 
+        
+    - name: Run CNN layer count test
+      run: |
+        python -m unittest test_mnist_cnn.py -k test_cnn_layer_count 
+
+    - name: Run maxpool placement test
+      run: |
+        python -m unittest test_mnist_cnn.py -k test_maxpool_after_conv 
+
     - name: Run model accuracy test
       run: |
         python -m unittest test_mnist_cnn.py -k test_model_accuracy 
