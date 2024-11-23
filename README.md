@@ -1,3 +1,7 @@
+# Lightweight MNIST CNN
+
+![Build Status](https://github.com/{username}/{repository-name}/actions/workflows/python-app.yml/badge.svg)
+
 ## Model Architecture
 
 The CNN architecture is specifically designed to be lightweight while maintaining high accuracy:
