@@ -93,9 +93,10 @@ def train_model():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # Enhanced data augmentation pipeline
+    # Enhanced data augmentation pipeline with v2 transforms
     train_transform = transforms.Compose([
-        transforms.ToTensor(),
+        transforms.ToImage(),
+        transforms.ToDtype(torch.float32, scale=True),
         transforms.RandomAffine(degrees=15, translate=(0.1, 0.1), scale=(0.9, 1.1)),
         transforms.RandomPerspective(distortion_scale=0.2, p=0.5),
         transforms.RandomErasing(p=0.1),
@@ -103,7 +104,8 @@ def train_model():
     ])
 
     test_transform = transforms.Compose([
-        transforms.ToTensor(),
+        transforms.ToImage(),
+        transforms.ToDtype(torch.float32, scale=True),
         transforms.Normalize((0.1307,), (0.3081,))
     ])
 
@@ -112,7 +114,10 @@ def train_model():
         root='./data', 
         train=True, 
         download=True, 
-        transform=transforms.ToTensor()
+        transform=transforms.Compose([
+            transforms.ToImage(),
+            transforms.ToDtype(torch.float32, scale=True)
+        ])
     )
 
     # Save augmentation examples before training
