@@ -39,3 +39,7 @@ data/
 env/
 venv/
 ENV/
+
+# Generated images
+augmentation_examples.png
+prediction_examples.png
