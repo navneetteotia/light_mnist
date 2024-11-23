@@ -1,6 +1,6 @@
 # Lightweight MNIST CNN
 
-![Build Status](https://github.com/{username}/{repository-name}/actions/workflows/python-app.yml/badge.svg)
+![Build Status](https://github.com/navneetteotia/light_mnist/actions/workflows/light-mnist.yml/badge.svg)
 
 ## Model Architecture
 
